@@ -18,12 +18,14 @@ int udp_getpacket(char * packet) {
 bool udp_sendpacket(IPAddress dest, const char * packet, uint8_t length) {
   if (!UdpOut.beginPacket(dest, GP_PORT)) return false;
   UdpOut.write(packet, length);
+#if 0
   Serial.print("Sending packet of len ");
   Serial.print(length);
   Serial.print(" to ");
   Serial.print(dest);
   Serial.print(" port ");
   Serial.println(GP_PORT);
+#endif
   return UdpOut.endPacket();
 }
 

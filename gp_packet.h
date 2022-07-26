@@ -1,7 +1,9 @@
 #ifndef GP_PACKET_H
 #define GP_PACKET_H
 
-#define MEDALLION_VERSION "TE Medallion v0.1"
+#define MEDALLION_VERSION "TE Medallion v0.2"
+
+// GigglePixel version
 #define CURRENT_VERSION 2
 
 #define MAX_PACKET_LEN 512
