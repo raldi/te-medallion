@@ -12,6 +12,6 @@ extern uint8_t last_wifi_status;
 void wifi_init(byte mac[6]);
 void wifi_loop();
 void wifi_update_timeout();
-bool wifi_info(IPAddress *ip, IPAddress *gateway, IPAddress *dns, byte *mac);
+bool wifi_info(IPAddress *ip, IPAddress *gateway, IPAddress *dns, byte mac[6]);
 
 #endif

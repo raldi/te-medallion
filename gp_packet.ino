@@ -4,7 +4,10 @@ const char * MAGIC = "GLPX";
 uint16_t my_gp_id = 0;
 
 uint16_t unpack16(const char * bytes) {
-  return *bytes | *(bytes+1);
+  uint16_t rv;
+  rv = (*bytes) << 8;
+  rv |= *(bytes+1);
+  return rv;
 }
 
 bool packet_parse(const char * packet, uint16_t packet_len, gp_t * gp) {
@@ -72,10 +75,6 @@ uint8_t encode_client_id(char * buf, const byte *ip, const byte *mac) {
     buf[14 + i] = mac[i];
   }
   
-  for (int i = 0 ; i < 4; i++) {
-    buf[14 + 6 + i] = ip[i];
-  }
-
   for (int i = 0 ; i < 4; i++) {
     buf[14 + 6 + i] = ip[i];
   }

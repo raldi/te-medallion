@@ -1,7 +1,7 @@
 #ifndef GP_PACKET_H
 #define GP_PACKET_H
 
-#define MEDALLION_VERSION "TE Medallion v0.2"
+#define MEDALLION_VERSION "TE Medallion v0.3"
 
 // GigglePixel version
 #define CURRENT_VERSION 2

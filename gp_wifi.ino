@@ -189,12 +189,12 @@ void wifi_update_timeout() {
   next_connect_attempt = millis() + IDLE_TIMEOUT;
 }
 
-bool wifi_info(IPAddress *ip, IPAddress *gateway, IPAddress *dns, byte *mac) {
+bool wifi_info(IPAddress *ip, IPAddress *gateway, IPAddress *dns, byte mac[6]) {
   if (last_wifi_status != WL_CONNECTED) return false;
   *ip = WiFi.localIP();
   *gateway = WiFi.gatewayIP();
   *dns = WiFi.dnsIP();
-  memset(mac, 0, sizeof(mac));
+  memset(mac, 0, 6);
   WiFi.macAddress(mac);
   return true;
 }
